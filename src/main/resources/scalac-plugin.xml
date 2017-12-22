@@ -1,0 +1,4 @@
+<plugin>
+    <name>ASTPrinter</name>
+    <classname>printer.ASTPrinterPlugin</classname>
+</plugin>
