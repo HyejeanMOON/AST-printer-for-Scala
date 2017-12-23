@@ -25,13 +25,13 @@ For example:
 
 ```
 
-           AST (desugar style)
+           AST (Token style)
 ----------------------------------------
 
 PackageDef(Select(Select(Select(Ident(ca), ca.uwaterloo), ca.uwaterloo.scalacg), ca.uwaterloo.scalacg.util), List(ClassDef(Modifiers(MODULE), newTypeName("Timer"), List(), Template(List(Select(Ident(scala), newTypeName("AnyRef"))), emptyValDef, List(DefDef(Modifiers(), nme.CONSTRUCTOR, List(), List(List()), TypeTree(), Block(List(Apply(Select(Super(This(newTypeName("Timer")), tpnme.EMPTY), nme.CONSTRUCTOR), List())), Literal(Constant(())))), DefDef(Modifiers(), newTermName("Hello"), List(), List(), TypeTree().setOriginal(Select(Ident(scala), scala.Unit)), Apply(Select(Select(This(newTypeName("scala")), scala.Predef), newTermName("print")), List(Literal(Constant("hello"))))), DefDef(Modifiers(), newTermName("World"), List(), List(), TypeTree().setOriginal(Select(Ident(scala), scala.Unit)), Block(List(Select(This(newTypeName("Timer")), newTermName("Hello"))), Apply(Select(Select(This(newTypeName("scala")), scala.Predef), newTermName("print")), List(Literal(Constant(" world")))))))))))
 ---------------------------------------
 
-           AST (Token style)
+           AST (Desugar style)
 ---------------------------------------
 
 Set(package ca.uwaterloo.scalacg.util {
