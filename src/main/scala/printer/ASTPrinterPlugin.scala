@@ -35,7 +35,7 @@ class ASTPrinterPlugin(val global: Global) extends Plugin{
       override def run = {
 
         println("")
-        println("           AST (desugar style)")
+        println("           AST (Token Style)")
         println("----------------------------------------")
         println("")
 
@@ -53,7 +53,7 @@ class ASTPrinterPlugin(val global: Global) extends Plugin{
         println("---------------------------------------")
 
         println("")
-        println("           AST (Token style)")
+        println("           AST (Desugar Style)")
         println("---------------------------------------")
         println("")
 
