@@ -36,7 +36,7 @@ class ASTPrinterPlugin(val global: Global) extends Plugin{
 
         println("")
         println("           AST (Token Style)")
-        println("----------------------------------------")
+        println("---------------------------------------")
         println("")
 
         var trees = Set[Tree]()
