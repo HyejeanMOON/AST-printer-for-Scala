@@ -26,7 +26,7 @@ For example:
 ```
 
            AST (Token style)
-----------------------------------------
+---------------------------------------
 
 PackageDef(Select(Select(Select(Ident(MOON), MOON.OCEAN), scala), MOON.OCEAN.scala.util), List(ClassDef(Modifiers(MODULE), newTypeName("Timer"), List(), Template(List(Select(Ident(scala), newTypeName("AnyRef"))), emptyValDef, List(DefDef(Modifiers(), nme.CONSTRUCTOR, List(), List(List()), TypeTree(), Block(List(Apply(Select(Super(This(newTypeName("Timer")), tpnme.EMPTY), nme.CONSTRUCTOR), List())), Literal(Constant(())))), DefDef(Modifiers(), newTermName("Hello"), List(), List(), TypeTree().setOriginal(Select(Ident(scala), scala.Unit)), Apply(Select(Select(This(newTypeName("scala")), scala.Predef), newTermName("print")), List(Literal(Constant("hello"))))), DefDef(Modifiers(), newTermName("World"), List(), List(), TypeTree().setOriginal(Select(Ident(scala), scala.Unit)), Block(List(Select(This(newTypeName("Timer")), newTermName("Hello"))), Apply(Select(Select(This(newTypeName("scala")), scala.Predef), newTermName("print")), List(Literal(Constant(" world")))))))))))
 ---------------------------------------
