@@ -23,7 +23,7 @@ Please remove "[" and "]".
 The idea of AST Visualization is from Rattata.Express my gratitude for Azard.<br>
 Rattata: https://github.com/Azard/Rattata
 
-This plugin will output two files. one is AST-TOKEN.txt, another is AST-DESUGAR.txt.
+This plugin will output two files. first is AST-TOKEN.txt, second is AST-DESUGAR.txt.
 
 
 For example about result:
