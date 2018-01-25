@@ -5,7 +5,7 @@ import scala.tools.nsc.{Global, Phase}
 import scala.tools.nsc.plugins.{Plugin, PluginComponent}
 
 
-class ASTPrinterPlugin(val global: Global) extends Plugin{
+class ASTPrinterPlugin(val global: Global) extends Plugin with ASTPrinter with OutputDesugar with OutputToken{
 
   import global._
 
@@ -32,10 +32,14 @@ class ASTPrinterPlugin(val global: Global) extends Plugin{
         assert(assertion = false)
       }
 
+      var ast:String = ""
+
       override def run = {
 
+
+
         println("")
-        println("           AST (Token Style)")
+        println("           AST (desugar style)")
         println("----------------------------------------")
         println("")
 
@@ -45,6 +49,8 @@ class ASTPrinterPlugin(val global: Global) extends Plugin{
 
         for(t <- trees){
 
+          ast = ast + showRaw(t)
+          println(ast)
           print(showRaw(t))
 
         }
@@ -53,7 +59,7 @@ class ASTPrinterPlugin(val global: Global) extends Plugin{
         println("---------------------------------------")
 
         println("")
-        println("           AST (Desugar Style)")
+        println("           AST (Token style)")
         println("---------------------------------------")
         println("")
 
@@ -64,15 +70,23 @@ class ASTPrinterPlugin(val global: Global) extends Plugin{
 
 
         println("")
-        println("                   BY MOON")
+
+        println("           AST Visualization")
+        println("---------------------------------------")
+
+        Run(ast)
 
         println("")
+        println("---------------------------------------")
         println("")
+        println("Output File...")
+
+        OutputTokenFile(ast)
+        OutputDesugarFile(showRaw(trees))
 
       }
     }
 
   }
-
 
 }
