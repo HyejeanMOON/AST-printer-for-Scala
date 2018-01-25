@@ -39,13 +39,10 @@ class ASTPrinterPlugin(val global: Global) extends Plugin with ASTPrinter with O
 
 
         println("")
-<<<<<<< HEAD
         println("           AST (desugar style)")
         println("----------------------------------------")
-=======
         println("           AST (Token Style)")
         println("---------------------------------------")
->>>>>>> 021c37176b632917595b92deeb2509ba0e2409a7
         println("")
 
         var trees = Set[Tree]()
