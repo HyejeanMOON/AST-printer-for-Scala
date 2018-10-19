@@ -9,7 +9,6 @@ class ASTPrinterPlugin(val global: Global) extends Plugin with ASTPrinter with O
 
   import global._
 
-
   val name = "AST_Printer"
   val description = "Generate a Abstract Syntax Tree"
   val components = List[PluginComponent](Component)
@@ -21,12 +20,10 @@ class ASTPrinterPlugin(val global: Global) extends Plugin with ASTPrinter with O
     val phaseName = "AST_Printer_phase"
     val description = ASTPrinterPlugin.this.description
 
-
     def newPhase(prev: Phase) = new ASTPrinterPhase(prev)
 
     class ASTPrinterPhase(prev: Phase) extends StdPhase(prev) {
       override def name = ASTPrinterPlugin.this.name
-
 
       def apply(unit: CompilationUnit): Unit = {
         assert(assertion = false)
@@ -35,49 +32,35 @@ class ASTPrinterPlugin(val global: Global) extends Plugin with ASTPrinter with O
       var ast:String = ""
 
       override def run = {
-
-
-
         println("")
         println("           AST (desugar style)")
         println("----------------------------------------")
         println("           AST (Token Style)")
         println("---------------------------------------")
         println("")
-
+        
         var trees = Set[Tree]()
-
         trees ++= global.currentRun.units.map(_.body)
 
         for(t <- trees){
-
           ast = ast + showRaw(t)
           println(ast)
           print(showRaw(t))
-
         }
 
         println("")
         println("---------------------------------------")
-
         println("")
         println("           AST (Token style)")
         println("---------------------------------------")
         println("")
-
         print(showRaw(trees))
-
         println("")
         println("----------------------------------------")
-
-
         println("")
-
         println("           AST Visualization")
         println("---------------------------------------")
-
         Run(ast)
-
         println("")
         println("---------------------------------------")
         println("")
